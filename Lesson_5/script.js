@@ -19,7 +19,7 @@ while (!userEmail || !userEmail.includes('@') || userEmail.startsWith('@') || us
 }
 
 while (!userYearOfBirth) {
-  userYearOfBirth = prompt('Please, type the year of your birth');
+  userYearOfBirth = prompt('What year were you born in?');
   if (userYearOfBirth) userYearOfBirth = parseInt(userYearOfBirth.replaceAll(' ', ''));
 }
 
