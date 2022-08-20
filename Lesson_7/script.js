@@ -29,8 +29,8 @@ do {
 const arr = new Array(arrLength);
 
 do {
-  minValue = +prompt('Please, enter value for MINIMUM of random element from -10 to 10 inclusive');
-
+  minValue = prompt('Please, enter value for MINIMUM of random element from -10 to 10 inclusive');
+  
   if (!minValue || isNaN(minValue)) {
     minValue = 0;
     continue;
@@ -44,7 +44,7 @@ do {
 
 
 do {
-  maxValue = +prompt(`Please, enter value for MAXIMUM of random element from ${minValue} to 50 inclusive`);
+  maxValue = prompt(`Please, enter value for MAXIMUM of random element from ${minValue} to 50 inclusive`);
 
   if (!maxValue || isNaN(maxValue)) {
     maxValue = 0;
@@ -65,7 +65,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 for (let i = 0; i < arr.length; i++) {
-  arr[i] = getRandomIntInclusive(minValue, maxValue);
+  arr[i] = getRandomIntInclusive(+minValue, +maxValue);
 }
 
 let minElement = maxElement = arr[0];
