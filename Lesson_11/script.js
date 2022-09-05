@@ -13,16 +13,8 @@ function winterValue(value) {
 	return value * 2;
 }
 
-function fullCopyOfArr(arr){
-	const copiedArr = [];
-
-	arr.forEach(element => Array.isArray(element) ? copiedArr.push(fullCopyOfArr(element)) : copiedArr.push(element));
-	
-	return copiedArr;
-}
-
 function getPrice(products, seasonFunc) {
-	const copiedProducts = fullCopyOfArr(products);
+	const copiedProducts = JSON.parse(JSON.stringify(products));
  
 	let sumProducts = 0;
  
