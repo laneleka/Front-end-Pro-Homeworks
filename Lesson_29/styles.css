@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wrapper .image {
+  width: 100%;
+}
+
+.wrapper .title {
+  color: #cccccc;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper .list {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  padding: 0;
+}
+
+.list li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li .button {
+  cursor: pointer;
+  height: 35px;
+  width: 25px;
+  border: none;
+  border-radius: 2px;
+  transition: box-shadow 0.4s ease;
+}
+
+.list li:last-child .button {
+  border-bottom: 3px solid #f8a00d;
+}
+
+.list li .button.current {
+  box-shadow: 0 3px 6px rgb(0 0 0 / 8%), 0 3px 6px rgb(0 0 0 / 15%);
+  margin-bottom: 1px;
+}
