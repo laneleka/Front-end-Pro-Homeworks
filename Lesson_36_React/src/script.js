@@ -23,11 +23,6 @@ class Table extends React.Component {
     const interval = setInterval(() => {
       const filtered = this.state.arr.filter(item => !item.isStyled);
 
-      if (filtered.length === 0) {
-        clearInterval(interval);
-        return;
-      }
-
       if (filtered.length <= Math.ceil(this.state.arr.length / 2)) {
         this.state.borderWidth = '10px';
       }
@@ -37,7 +32,11 @@ class Table extends React.Component {
       this.state.arr[newIndex].isStyled = true;
       this.state.borderWidth = filtered.length === 1 ? '20px' : this.state.borderWidth;
 
-      this.setState(this.state);
+      this.setState(this.state, () => {
+        if (filtered.length === 1) {
+          clearInterval(interval);
+        }
+      });
     }, INTERVAL_DELAY)
   }
 
